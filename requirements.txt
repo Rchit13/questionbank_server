@@ -1,6 +1,5 @@
 fastapi[all]
 
-google-api-python-client
+gcsfs
 google-auth
-google-auth-httplib2
-google-auth-oauthlib
+pandas
