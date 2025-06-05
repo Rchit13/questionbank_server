@@ -91,6 +91,9 @@ ENV/
 env.bak/
 venv.bak/
 
+# service account info
+service-account.json
+
 # Spyder project settings
 .spyderproject
 .spyproject
