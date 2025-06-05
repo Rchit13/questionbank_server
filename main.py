@@ -69,8 +69,9 @@ async def static_files(path: str):
 # set subject
 @app.post("/api/subjects/{subject}")
 async def set_subject(subject: str):
-    selected_subject = subjects_df['Subject'].unique().tolist()[subject-1]  # Default to first subject
-    questions_df = pd.read_csv('gs://ib_question_bank/QuestionBank/'+subjects_df.loc[subject-1, 'DataFile'])
+    idx = int(subject) - 1  # Convert to zero-based index
+    selected_subject = subjects_df['Subject'].unique().tolist()[idx]  # Default to first subject
+    questions_df = pd.read_csv('gs://ib_question_bank/QuestionBank/'+subjects_df.loc[idx, 'DataFile'])
 
 
 # Filter/list questions (with pagination)
