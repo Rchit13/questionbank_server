@@ -72,6 +72,7 @@ async def set_subject(subject: str):
     idx = int(subject) - 1  # Convert to zero-based index
     selected_subject = subjects_df['Subject'].unique().tolist()[idx]  # Default to first subject
     questions_df = pd.read_csv('gs://ib_question_bank/QuestionBank/'+subjects_df.loc[idx, 'DataFile'])
+    return {"subject": selected_subject}
 
 
 # Filter/list questions (with pagination)
